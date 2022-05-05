@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南开纪委</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <style>
+        .index {
+            position: absolute;
+            width: 1500px;
+            height: 2667px;
+            /* display: block; */
+        }
+
+        /* 背景大小 */
+        .index img,
+        .index_1 img,
+        .index_2 img,
+        .index_3 img,
+        .index_4 img,
+        .index_5 img,
+        .index_6 img,
+        .index_7 img,
+        .index_4_1 img,
+        .index_4_2 img,
+        .index_4_3 img,
+        .index_4_4 img,
+        .index_4_5 img {
+            position: absolute;
+            z-index: 1;
+            width: 1500px;
+            height: 2667px;
+        }
+
+        .index1,
+        .index2,
+        .index3,
+        .index4,
+        .index5,
+        .index6,
+        .index7,
+        .mySwiper {
+            z-index: 2;
+            position: absolute;
+            /* border: solid 1px red; */
+        }
+
+        /* 盒子大小 */
+        .index_1,
+        .index_2,
+        .index_3,
+        .index_4,
+        .index_5,
+        .index_6,
+        .index_7,
+        .index_2_1,
+        .index_2_2,
+        .index_2_3,
+        .index_2_4,
+        .index_3_1,
+        .index_3_2,
+        .index_3_3,
+        .index_3_4,
+        .index_3_5,
+        .index_3_6,
+        .index_3_7,
+        .index_4_1,
+        .index_4_2,
+        .index_4_3,
+        .index_4_4,
+        .index_4_5 {
+            z-index: 1;
+            position: absolute;
+            width: 1500px;
+            height: 2667px;
+            display: none;
+        }
+
+        /* 联络站连心桥 */
+        .index_21,
+        .index_22,
+        .index_23,
+        .index_24,
+        .index_25 {
+            width: 1175px;
+            height: 150px;
+            z-index: 2;
+            position: absolute;
+            /* border: solid 1px red; */
+        }
+
+        /* 社区廉事 */
+        .index_31,
+        .index_32,
+        .index_33,
+        .index_34,
+        .index_35,
+        .index_36,
+        .index_37 {
+            width: 1500px;
+            z-index: 2;
+            position: absolute;
+            /* border: solid 1px red; */
+            height: 370px;
+        }
+
+        /* 向群众汇报 */
+        .index_41,
+        .index_42,
+        .index_43,
+        .index_44,
+        .index_45 {
+            width: 1500px;
+            z-index: 2;
+            position: absolute;
+            /* border: solid 1px red; */
+        }
+
+        /*7  我市通报 */
+        .index_7_text {
+            z-index: 2;
+            position: absolute;
+            /* border: solid 1px red; */
+            width: 1200px;
+            height: 1500px;
+            margin-top: 900px;
+            margin-left: 150px;
+            font-size: 40px;
+            overflow: auto;
+        }
+
+        .index_7_text::-webkit-scrollbar {
+            /*滚动条整体样式*/
+            width: 10px;
+            /*高宽分别对应横竖滚动条的尺寸*/
+            height: 5px;
+        }
+
+        .index_7_text::-webkit-scrollbar-thumb {
+            /*滚动条里面小方块*/
+            border-radius: 25px;
+            background: #2677d0;
+        }
+
+        .index_7_text::-webkit-scrollbar-track {
+            /*滚动条里面轨道*/
+            border-radius: 10px;
+            /* background: rgba(204, 102, 255,0); */
+        }
+
+        /* 返回按钮 */
+        .index_1_return,
+        .index_2_return,
+        .index_3_return,
+        .index_4_return,
+        .index_5_return,
+        .index_6_return,
+        .index_7_return,
+        .index_2_1_return,
+        .index_2_2_return,
+        .index_2_3_return,
+        .index_2_4_return,
+        .index_3_1_return,
+        .index_3_2_return,
+        .index_3_3_return,
+        .index_3_4_return,
+        .index_3_5_return,
+        .index_3_6_return,
+        .index_3_7_return,
+        .index_4_1_return,
+        .index_4_2_return,
+        .index_4_3_return,
+        .index_4_4_return,
+        .index_4_5_return {
+            z-index: 2;
+            position: absolute;
+            /* border: solid 1px red; */
+            width: 100px;
+            height: 100px;
+        }
+
+        /* video */
+        .index_5 video,
+        .index_3_1 video, 
+        .index_3_2 video,
+        .index_3_3 video,
+        .index_3_4 video,
+        .index_3_5 video{
+            z-index: 2;
+            position: absolute;
+            margin-top: 973px;
+            margin-left: 110px;
+        }
+
+        /* 轮播 */
+        .mySwiper {
+            margin-left: 20px;
+            background-color: #d0ebff;
+            width: 1460px;
+            height: 650px;
+            margin-top: 135px;
+            --swiper-pagination-color: #00ff33;
+        }
+
+        .swiper-slide {
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 1300px;
+            height: 600px;
+            margin-top: -45px;
+        }
+        .swiper-pagination-bullet{
+            width: 60px;
+            border-radius: 20px;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: blue;
+            width: 60px;
+            border-radius: 20px;
+        }
+        /* 轮播2 */
+        .mySwiper1 {
+            margin-left: 20px;
+            background-color: #d0ebff;
+            width: 1460px;
+            height: 2500px;
+            margin-top: 135px;
+            overflow:hidden;width:100%;
+        }
+
+        .swiper-slide1 {
+            width: 1300px;
+            height: 2400px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            /* display: flex; */
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide1 img {
+            width: 1300px;
+            height: 2400px;
+            margin-top: -45px;
+        }
+        .swiper-pagination-bullet{
+            width: 60px;
+            border-radius: 20px;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: blue;
+            width: 60px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 首页 -->
+    <div class="index">
+        <img
+            src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqaFZbglXm5azZZcQdbe2*7CWenmKO1F0XywobWZhZJwJ8B3OtZFqYv.enUNhnKlNLdPZKVmSEN64gAvkRv3zK7E!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqR1wO3.XyvqWgOBMatxKMWoVdrzTqsWaFzRQ7QokfbXu70hXHUdWfgNAmozZ6uZn.4rguxrjeMpEkyJqrPKb8TQ!/b&bo=IAPCASADwgEBByA!&rf=viewer_4" alt=""></div>
+                <div class="swiper-slide"><img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqajKvJ3.thLTkn6vR822SjkK95skrCwHWwYEarQUharJxE7ADnFgPO9O5pc97hCNx6dC8LHKG*gbiW3d0jsiX.c!/b&bo=IAPCASADwgEBFzA!&rf=viewer_4" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="index1" style="width: 671px;height: 395px;margin-left: 128px;margin-top: 808px;"></div>
+        <div class="index2" style="width: 540px;height: 305px;margin-left: 813px;margin-top: 808px;"></div>
+        <div class="index3" style="width: 671px;height: 210px;margin-left: 128px;margin-top: 1223px;"></div>
+        <div class="index4" style="width: 545px;height: 310px;margin-left: 813px;margin-top: 1127px;"></div>
+        <div class="index5" style="width: 1500px;height: 365px;margin-top: 1570px;"></div>
+        <div class="index6" style="width: 1500px;height: 365px;margin-top: 1935px;"></div>
+        <div class="index7" style="width: 1500px;height: 190px;margin-top: 2300px;"></div>
+    </div>
+    <!-- 1 我有话说 -->
+    <div class="index_1">
+        <div class="index_1_return" style="margin-top: 10px;margin-left: 50px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqaIb..lNfabLSA0EfseYqovQfaM5P*xh1zdR.GeO28HzcmTdfgWnX9yopeRnW6UFgaULGSRBu0jVwrSKHiA7ieo!/b&bo=3AVrCtwFawoBJwA!&rf=viewer_4">
+    </div>
+    <!-- 2 联络站连心桥 -->
+    <div class="index_2">
+        <div class="index_2_return" style="margin-top: 10px;margin-left: 50px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqX.9QYA5GNEhPV6oPNxLi0uPu9H9UHHHVK9xL7TFD4YlA2XwhYwNeq*KFHjTEHeN*bW3ou5h7Du9tvImUrsf.Hk!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4">
+        <div class="index_21" style="margin-top: 470px;margin-left: 160px;"></div>
+        <div class="index_22" style="margin-top: 720px;margin-left: 160px;"></div>
+        <div class="index_23" style="margin-top: 970px;margin-left: 160px;"></div>
+        <div class="index_24" style="margin-top: 1200px;margin-left: 160px;"></div>
+    </div>
+    <div class="index_2_1">
+        <div class="index_2_1_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqVFP0A8RNRannsVHYfDMDLrS3jnHAz42kRsVfPMwxIzY4LVZGp3IT*JIhv8crN3c379bS07QvNRnAqlII5sHNqw!/b&bo=3AVrCtwFawoBNxA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_2_2">
+        <div class="index_2_2_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqSQKlL4KVDrBO79UHnsPYV223FomLdWNbrTjtt2avuaV5nQZfDmHglY0Yl68E*Usl5dhwujknJvZ8xS4fDPyXcU!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_2_3">
+        <div class="index_2_3_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqZROff8jfWsZn0rXtHo1TN57BABQaGCa.Y7MV.BvoAMl3*J5C2EOao3.eXvBlcbSa0r3xr8VyUpHLtwC*Ac3NpQ!/b&bo=3AVrCtwFawoBJwA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_2_4">
+        <div class="index_2_4_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqStnrHjGBEQida66AYgQLA40fC8ZChOyBIR5WnRdu*xsZ*nOZC.SYeGmTq7rO8o4U7OGog.72AdrxXT*Maln5HM!/b&bo=3AVrCtwFawoBNxA!&rf=viewer_4" alt="">
+    </div>
+    <!-- 3 社区廉事小课堂 -->
+    <div class="index_3">
+        <div class="index_3_return" style="margin-top: 10px;margin-left: 50px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqXRnwavojkL68bfCiIIIBftlMSnazgtyuCXjseS3xNyChEERj3Po2i1T9rzK*Ot0l7isjHtS*0arPNBASlqCRHw!/b&bo=3AVrCtwFawoBNxA!&rf=viewer_4">
+        <div class="index_31" style="margin-top: 150px;height: 370px;"></div>
+        <div class="index_32" style="margin-top: 520px;height: 350px;"></div>
+        <div class="index_33" style="margin-top: 870px;height: 350px;"></div>
+        <div class="index_34" style="margin-top: 1220px;height: 350px"></div>
+        <div class="index_35" style="margin-top: 1570px;height: 350px"></div>
+        <div class="index_36" style="margin-top: 1920px;height: 340px"></div>
+        <div class="index_37" style="margin-top: 2260px;height: 350px"></div>
+    </div>
+    <div class="index_3_1">
+        <div class="index_3_1_return" style="margin-left: 40px;margin-top: 10px;"></div>
+        <video src="http://rbalhj78v.hb-bkt.clouddn.com/video1.mp4"controls></video>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqRVatIUaxl2Pe8SxY8jNNbtpABWDMjc6shKTuh8Se6Irj1idureHZBSYEoDrBBnMTpKfwKAuUqfyyFZt0dkrLzA!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">      
+    </div>
+    <div class="index_3_2">
+        <div class="index_3_2_return" style="margin-left: 40px;margin-top: 10px;"></div>
+        <video src="http://rbalhj78v.hb-bkt.clouddn.com/video2.mp4" controls></video>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqRVatIUaxl2Pe8SxY8jNNbtpABWDMjc6shKTuh8Se6Irj1idureHZBSYEoDrBBnMTpKfwKAuUqfyyFZt0dkrLzA!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_3_3">
+        <div class="index_3_3_return" style="margin-left: 40px;margin-top: 10px;"></div>
+        <video src="http://rbalhj78v.hb-bkt.clouddn.com/video3.mp4" controls></video>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqRVatIUaxl2Pe8SxY8jNNbtpABWDMjc6shKTuh8Se6Irj1idureHZBSYEoDrBBnMTpKfwKAuUqfyyFZt0dkrLzA!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_3_4">
+        <div class="index_3_4_return" style="margin-left: 40px;margin-top: 10px;"></div>
+        <video src="http://rbalhj78v.hb-bkt.clouddn.com/video4.mp4" controls></video>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqRVatIUaxl2Pe8SxY8jNNbtpABWDMjc6shKTuh8Se6Irj1idureHZBSYEoDrBBnMTpKfwKAuUqfyyFZt0dkrLzA!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_3_5">
+        <div class="index_3_5_return" style="margin-left: 40px;margin-top: 10px;"></div>
+        <video src="http://rbalhj78v.hb-bkt.clouddn.com/video5.mp4" controls width="1280px" height="720px"></video>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqRVatIUaxl2Pe8SxY8jNNbtpABWDMjc6shKTuh8Se6Irj1idureHZBSYEoDrBBnMTpKfwKAuUqfyyFZt0dkrLzA!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_3_6">
+        <div class="index_3_6_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqVLFt7v.M9p.goVjFz*Gf*HytpXLJIRnAqCma2MeXRa6hjdOpCdrGOybXMlcsUx2CaTma4wkXknb49dHYdPau4o!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_3_7">
+        <div class="index_3_7_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqVlbT*JWImHhdSytQU*oIYDhrMAhxDcJlrBD.LgNbi..zepD0QegldXQ03Haxx2l0eepgU6rp63c6gOPfKroGzA!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+    <!-- 4 向群众汇报 -->
+    <div class="index_4">
+        <div class="index_4_return" style="margin-left: 80px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqSXbY4*o0osJRnm9kSKEq7w3ux94H9QW7sr8bNhCwl3o8Q9KGsqFerek5tYp8cnp0G3AYglWPV3LcxuJJC56pI0!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4">
+        <div class="index_41" style="margin-top: 140px;height: 460px;"></div>
+        <div class="index_42" style="margin-top: 600px;height: 495px;"></div>
+        <div class="index_43" style="margin-top: 1100px;height: 495px;"></div>
+        <div class="index_44" style="margin-top: 1595px;height: 480px;"></div>
+        <div class="index_45" style="margin-top: 2080px;height: 495px;"></div>
+    </div>
+    <div class="index_4_1">
+        <div class="index_4_1_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqaAUqnchTWkerQTSOV0eB3ULmTowP7PICvQ7*E.6dhLQWIFTfXiltTxasUc*yIfeIMPkV9OKevA*EE71U4HrkA0!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_4_2">
+        <div class="index_4_2_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqVQl*Al9gN.G9MkAEXAafO1iI1J*VNjidqukWtgujXwxBV8NnnaclVn5uUmIl6Ezl7.9eYg7Zjsw3KeAG1FADXM!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_4_3">
+        <div class="index_4_3_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqd9HLASSVGVZ66NJ38yHtOJqjvf8Po*oJL9J8AHRVnvQYHSDp599dZEqXUTOxcJcWEFTvA*KtMWsZb1PdrAGyPo!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_4_4">
+        <div class="index_4_4_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqWEpTA8gfgfpj.Fr.6.lcmhYqRIQoZTeCxUGJQA*JopD69tBofd0rRvPGcAAwa1aMHSKNnrR96oYCUT7bd4efUM!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+    <div class="index_4_5">
+        <div class="index_4_5_return" style="margin-left: 35px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqeJHnykQbzCxCySaK1.zLi1q1TZyEkDFE9XZ*69IHsOk*i4HaObxhJjaimzOim0nlpayD77vek2E8DPXTv9O0Kg!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+    <!-- 新闻动态 -->
+    <div class="index_5">
+        <div class="index_5_return" style="margin-left: 40px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqRVatIUaxl2Pe8SxY8jNNbtpABWDMjc6shKTuh8Se6Irj1idureHZBSYEoDrBBnMTpKfwKAuUqfyyFZt0dkrLzA!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">
+        <video src="http://rbalhj78v.hb-bkt.clouddn.com/video1.mp4"controls></video>
+    </div>
+    <div class="index_6">
+        <div class="index_6_return" style="margin-left: 40px;margin-top: 10px;"></div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqRVatIUaxl2Pe8SxY8jNNbtpABWDMjc6shKTuh8Se6Irj1idureHZBSYEoDrBBnMTpKfwKAuUqfyyFZt0dkrLzA!/b&bo=3AVrCtwFawoBByA!&rf=viewer_4" alt="">
+        <div class="swiper mySwiper1">
+            <div class="swiper-wrapper swiper-wrapper1">
+                <div class="swiper-slide swiper-slide1"><img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqW*Idz8uM63o6lB1POxGgpqiC7n.*luaI5wD18TaVw0AWK6eY7OZ468jnBCsIR106FqRCohi1mtF.uVGusG2Cow!/b&bo=QAZ2CUAGdgkBByA!&rf=viewer_4" alt=""></div>
+                <div class="swiper-slide swiper-slide1"><img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqf8.UGclEZIQCLc258nKRFSpQWQ2OEwdhOtYIUgy24LDet851YPheqc5Iod37I7zuovt9aivpRzMuKe5rTNDFbA!/b&bo=QAZ2CUAGdgkBNxA!&rf=viewer_4" alt=""></div>
+                <div class="swiper-slide swiper-slide1"><img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqW2OkYW4.bYUQBdqX8OFkl8JZtBMCIFDaC7sGB.76AJkypiVkLziw68Q.K.aJ7YGto2E0d5smMJ*WRZNEzTt9SU!/b&bo=QAZ2CUAGdgkBNxA!&rf=viewer_4" alt=""></div>
+                <div class="swiper-slide swiper-slide1"><img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqSCUjacVQcju4B6UxVb2W5kQ1zh8mXsZpZC332xU*bmhDxN6ZwXKBoNysF3Gsbmu5vvVGkLE7t0Gk37FndjCVhA!/b&bo=QAZ2CUAGdgkBNxA!&rf=viewer_4" alt=""></div>
+                <div class="swiper-slide swiper-slide1"><img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqTMwvV1*54Q0YHmnoD9tD*M.YpgaK7MOQZt2cy66D8NcvqeR8jYtPlMThXs2MVitjG8.SVqcBodBep1vc0UkObc!/b&bo=QAZ2CUAGdgkBNxA!&rf=viewer_4" alt=""></div>
+            </div>
+            <div class="swiper-pagination swiper-pagination1"></div>
+        </div>
+    </div>
+    <div class="index_7">
+        <div class="index_7_return" style="margin-top: 10px;margin-left: 50px;"></div>
+        <div class="index_7_text">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为持续深入整治形式主义官僚主义、不担当不作为作风顽疾，发挥典型案例警示震慑作用，教育引导广大党员干部担当作为、砥砺奋进，我市通报4起典型问题。</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北辰区生态环境局党组成员、副局长刘立民对环境执法工作监管不严问题。2020年1月，北辰区生态环境局对某项目2019年7月至11月期间施工作业存在噪声污染问题，一次性作出46份行政处罚决定书，每份处罚3万元、累计罚款138万元，并于3月17日、3月19日送达被处罚单位。后经行政复议，该46份行政处罚决定书因严重程序违法被全部撤销。刘立民作为分管领导，工作审核把关不严，导致行政执法乱作为问题发生，对区域营商环境产生不良影响。2021年12月，刘立民受到党内警告处分。其他相关责任人员受到相应处理。</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宝坻区人民医院办公室主任、保卫处处长赵宝泉等人履行公车监管职责缺位问题。宝坻区人民医院根据业务需要，将公车分配给相关科室保管使用，2014年至2020年，该医院10名科室负责人先后出现在离开工作岗位后将车辆带离继续使用情况，存在公车私用问题，直至区委巡察和审计时才被发现并追回。赵宝泉负责公务用车分配、管理工作期间，责任意识淡薄，履行职责不力，对上述问题失察失管，造成医院国有资产流失风险。2021年8月，赵宝泉受到党内严重警告处分。其他相关责任人员受到相应处理。</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宁河区农业农村委原党组成员、农业综合行政执法支队原支队长赵铁成，宁河区造甲城镇农业农村发展办公室主任刘福友治理非法捕捞失职失责问题。2020年12月至2021年3月，市政务服务便民热线多次将群众举报反映永定新河、潮白河非法捕捞问题反馈给宁河区农业农村委，赵铁成只安排渔政执法人员进行政策宣传和劝离，没有研究制定有效的巡查、防控措施。2021年3月8日，市级新闻媒体暗访发现永定新河造甲城镇段有渔船非法捕捞，并将情况分别反馈给宁河区农业农村委和造甲城镇河长办。赵铁成、刘福友到达现场后，未及时采取有效措施予以处置，履行监管治理职责主动担当作为不够，导致非法捕捞现象屡禁不止，被媒体公开曝光，造成不良影响。2021年4月，赵铁成受到党内警告处分；刘福友受到党内警告、政务记过处分。</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;天津雍鑫建设投资集团有限公司党委书记、总经理任广亮落实管党治党第一责任人责任不力问题。2021年1月，武清区开展党员干部违规收送礼品礼金专项治理期间，雍鑫建设投资集团党委未及时开展动员教育，制定工作方案照搬照抄上级文件，自查自纠搞形式、走过场，未经核实即作出自查自纠“零报告”承诺，后经核查该集团多人因违规送礼金问题受到处理。任广亮落实管党治党第一责任人责任不力，2021年6月，受到党内警告处分。</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通报指出，以上典型案例，有的把关不严，对行政执法乱作为不管不问；有的疏于管理、工作懈怠，造成国有资产流失风险；有的失职失责，致使违法行为长期得不到有效治理；有的工作不认真、应付了事，“一把手”责任落虚落空。对上述党员干部严肃处理，充分表明了市委持续深入治理形式主义官僚主义、不担当不作为问题的鲜明态度，彰显了对作风顽疾重拳出击、猛药去疴的坚定决心。</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通报强调，开创全面建设社会主义现代化大都市新局面，落实“十四五”规划各项具体任务，对干部能力、作风提出了更高要求。全市各级党组织要全面贯彻党的十九大和十九届历次全会精神，深入学习落实习近平总书记关于作风建设的重要论述，不断增强作风建设永远在路上的政治自觉、思想自觉和行动自觉，主动种好“责任田”，坚持严格教育、严格管理，坚决扛起作风建设政治责任。广大党员干部要以案为鉴、引以为戒，大力弘扬党的光荣传统和优良作风，树立正确政绩观，厚植为民情怀，不断锤炼事功，形成时不我待、担当尽责、事争一流的良好氛围。各级纪检监察机关要认真履行监督专责，持之以恒纠“四风”树新风，坚持严的主基调不动摇，以严的态度、实的措施，推动讲担当促作为抓落实、持续深入治理形式主义官僚主义和不担当不作为问题专项行动取得更大成效，为党的二十大胜利召开提供坚实作风保证。
+        </div>
+        <img src="http://m.qpic.cn/psc?/V53ROKK21cQLkL0G3NW03pFtOm2Ijq6V/bqQfVz5yrrGYSXMvKr.cqbuCdySzuwwpQ8gD7D*4zIBcDUN6pzR26pSafgnS5ft3bxyICUHcV.hGmF2UhCLku6RPYKt.qR*b0YYof3MjA9E!/b&bo=3AVrCtwFawoBFzA!&rf=viewer_4" alt="">
+    </div>
+</body>
+<script>
+    $(function () {
+        // 首页跳转
+        //1  我有话说
+        $('.index1').on('click', function () {
+            $('.index_1').fadeIn(700)
+            $('index').fadeOut(700)
+            $('.mySwiper').fadeOut(700)
+            $('.index1').fadeOut(700)
+            $('.index2').fadeOut(700)
+            $('.index3').fadeOut(700)
+            $('.index4').fadeOut(700)
+            $('.index5').fadeOut(700)
+            $('.index6').fadeOut(700)
+            $('.index7').fadeOut(700)
+        })
+        $('.index_1_return').on('click', function () {
+            $('.index_1').fadeOut(700)
+            $('index').fadeIn(700)
+            $('.mySwiper').fadeIn(700)
+            $('.index1').fadeIn(700)
+            $('.index2').fadeIn(700)
+            $('.index3').fadeIn(700)
+            $('.index4').fadeIn(700)
+            $('.index5').fadeIn(700)
+            $('.index6').fadeIn(700)
+            $('.index7').fadeIn(700)
+        })
+        //2 联络站连心桥
+        $('.index2').on('click', function () {
+            $('.index_2').fadeIn(700)
+            $('index').fadeOut(700)
+            $('.mySwiper').fadeOut(700)
+            $('.index1').fadeOut(700)
+            $('.index2').fadeOut(700)
+            $('.index3').fadeOut(700)
+            $('.index4').fadeOut(700)
+            $('.index5').fadeOut(700)
+            $('.index6').fadeOut(700)
+            $('.index7').fadeOut(700)
+        })
+        $('.index_2_return').on('click', function () {
+            $('.index_2').fadeOut(700)
+            $('index').fadeIn(700)
+            $('.mySwiper').fadeIn(700)
+            $('.index1').fadeIn(700)
+            $('.index2').fadeIn(700)
+            $('.index3').fadeIn(700)
+            $('.index4').fadeIn(700)
+            $('.index5').fadeIn(700)
+            $('.index6').fadeIn(700)
+            $('.index7').fadeIn(700)
+        })
+        // 联络站连心桥内容跳转
+        $('.index_21').on('click', function () {
+            $('.index_2_1').fadeIn(700)
+            $('.index_2').fadeOut(700)
+        })
+        $('.index_2_1_return').on('click', function () {
+            $('.index_2_1').fadeOut(700)
+            $('.index_2').fadeIn(700)
+        })
+
+        $('.index_22').on('click', function () {
+            $('.index_2_2').fadeIn(700)
+            $('.index_2').fadeOut(700)
+        })
+        $('.index_2_2_return').on('click', function () {
+            $('.index_2_2').fadeOut(700)
+            $('.index_2').fadeIn(700)
+        })
+
+        $('.index_23').on('click', function () {
+            $('.index_2_3').fadeIn(700)
+            $('.index_2').fadeOut(700)
+        })
+        $('.index_2_3_return').on('click', function () {
+            $('.index_2_3').fadeOut(700)
+            $('.index_2').fadeIn(700)
+        })
+
+        $('.index_24').on('click', function () {
+            $('.index_2_4').fadeIn(700)
+            $('.index_2').fadeOut(700)
+        })
+        $('.index_2_4_return').on('click', function () {
+            $('.index_2_4').fadeOut(700)
+            $('.index_2').fadeIn(700)
+        })
+        //3  社区廉事小课堂
+        $('.index3').on('click', function () {
+            $('.index_3').fadeIn(700)
+            $('index').fadeOut(700)
+            $('.mySwiper').fadeOut(700)
+            $('.index1').fadeOut(700)
+            $('.index2').fadeOut(700)
+            $('.index3').fadeOut(700)
+            $('.index4').fadeOut(700)
+            $('.index5').fadeOut(700)
+            $('.index6').fadeOut(700)
+            $('.index7').fadeOut(700)
+        })
+        $('.index_3_return').on('click', function () {
+            $('.index_3').fadeOut(700)
+            $('index').fadeIn(700)
+            $('.mySwiper').fadeIn(700)
+            $('.index1').fadeIn(700)
+            $('.index2').fadeIn(700)
+            $('.index3').fadeIn(700)
+            $('.index4').fadeIn(700)
+            $('.index5').fadeIn(700)
+            $('.index6').fadeIn(700)
+            $('.index7').fadeIn(700)
+        })
+        // 社区廉事跳转
+        $('.index_31').on('click', function () {
+            $('.index_3_1').fadeIn(700)
+            $('.index_3').fadeOut(700)
+            $('.index_3_1 video')[0].play();
+        })
+        $('.index_3_1_return').on('click', function () {
+            $('.index_3_1').fadeOut(700)
+            $('.index_3').fadeIn(700)
+            $('.index_3_1 video')[0].pause();
+        })
+
+        $('.index_32').on('click', function () {
+            $('.index_3_2').fadeIn(700)
+            $('.index_3').fadeOut(700)
+            $('.index_3_2 video')[0].play();
+        })
+        $('.index_3_2_return').on('click', function () {
+            $('.index_3_2').fadeOut(700)
+            $('.index_3').fadeIn(700)
+            $('.index_3_2 video')[0].pause();
+        })
+
+        $('.index_33').on('click', function () {
+            $('.index_3_3').fadeIn(700)
+            $('.index_3').fadeOut(700)
+            $('.index_3_3 video')[0].play();
+        })
+        $('.index_3_3_return').on('click', function () {
+            $('.index_3_3').fadeOut(700)
+            $('.index_3_3 video')[0].pause();
+            $('.index_3').fadeIn(700)
+        })
+
+        $('.index_34').on('click', function () {
+            $('.index_3_4').fadeIn(700)
+            $('.index_3').fadeOut(700)
+            $('.index_3_4 video')[0].play();
+        })
+        $('.index_3_4_return').on('click', function () {
+            $('.index_3_4').fadeOut(700)
+            $('.index_3_4 video')[0].pause();
+            $('.index_3').fadeIn(700)
+        })
+
+        $('.index_35').on('click', function () {
+            $('.index_3_5').fadeIn(700)
+            $('.index_3').fadeOut(700)
+            $('.index_3_5 video')[0].play();
+        })
+        $('.index_3_5_return').on('click', function () {
+            $('.index_3_5').fadeOut(700)
+            $('.index_3_5 video')[0].pause();
+            $('.index_3').fadeIn(700)
+        })
+
+        $('.index_36').on('click', function () {
+            $('.index_3_6').fadeIn(700)
+            $('.index_3').fadeOut(700)
+        })
+        $('.index_3_6_return').on('click', function () {
+            $('.index_3_6').fadeOut(700)
+            $('.index_3').fadeIn(700)
+        })
+
+        $('.index_36').on('click', function () {
+            $('.index_3_6').fadeIn(700)
+            $('.index_3').fadeOut(700)
+        })
+        $('.index_3_6_return').on('click', function () {
+            $('.index_3_6').fadeOut(700)
+            $('.index_3').fadeIn(700)
+        })
+
+        $('.index_37').on('click', function () {
+            $('.index_3_7').fadeIn(700)
+            $('.index_3').fadeOut(700)
+        })
+        $('.index_3_7_return').on('click', function () {
+            $('.index_3_7').fadeOut(700)
+            $('.index_3').fadeIn(700)
+        })
+        //4  向群众汇报
+        $('.index4').on('click', function () {
+            $('.index_4').fadeIn(700)
+            $('index').fadeOut(700)
+            $('.mySwiper').fadeOut(700)
+            $('.index1').fadeOut(700)
+            $('.index2').fadeOut(700)
+            $('.index3').fadeOut(700)
+            $('.index4').fadeOut(700)
+            $('.index5').fadeOut(700)
+            $('.index6').fadeOut(700)
+            $('.index7').fadeOut(700)
+        })
+        $('.index_4_return').on('click', function () {
+            $('.index_4').fadeOut(700)
+            $('index').fadeIn(700)
+            $('.mySwiper').fadeIn(700)
+            $('.index1').fadeIn(700)
+            $('.index2').fadeIn(700)
+            $('.index3').fadeIn(700)
+            $('.index4').fadeIn(700)
+            $('.index5').fadeIn(700)
+            $('.index6').fadeIn(700)
+            $('.index7').fadeIn(700)
+        })
+        // 向群众汇报内容跳转
+        $('.index_41').on('click', function () {
+            $('.index_4_1').fadeIn(700)
+            $('.index_4').fadeOut(700)
+        })
+        $('.index_4_1_return').on('click', function () {
+            $('.index_4_1').fadeOut(700)
+            $('.index_4').fadeIn(700)
+        })
+
+        $('.index_42').on('click', function () {
+            $('.index_4_2').fadeIn(700)
+            $('.index_4').fadeOut(700)
+        })
+        $('.index_4_2_return').on('click', function () {
+            $('.index_4_2').fadeOut(700)
+            $('.index_4').fadeIn(700)
+        })
+
+        $('.index_43').on('click', function () {
+            $('.index_4_3').fadeIn(700)
+            $('.index_4').fadeOut(700)
+        })
+        $('.index_4_3_return').on('click', function () {
+            $('.index_4_3').fadeOut(700)
+            $('.index_4').fadeIn(700)
+        })
+
+        $('.index_44').on('click', function () {
+            $('.index_4_4').fadeIn(700)
+            $('.index_4').fadeOut(700)
+        })
+        $('.index_4_4_return').on('click', function () {
+            $('.index_4_4').fadeOut(700)
+            $('.index_4').fadeIn(700)
+        })
+
+        $('.index_45').on('click', function () {
+            $('.index_4_5').fadeIn(700)
+            $('.index_4').fadeOut(700)
+        })
+        $('.index_4_5_return').on('click', function () {
+            $('.index_4_5').fadeOut(700)
+            $('.index_4').fadeIn(700)
+        })
+        //5  微动画
+        $('.index5').on('click', function () {
+            $('.index_5').fadeIn(700)
+            $('.index_5 video')[0].play();
+            $('index').fadeOut(700)
+            $('.mySwiper').fadeOut(700)
+            $('.index1').fadeOut(700)
+            $('.index2').fadeOut(700)
+            $('.index3').fadeOut(700)
+            $('.index4').fadeOut(700)
+            $('.index5').fadeOut(700)
+            $('.index6').fadeOut(700)
+            $('.index7').fadeOut(700)
+        })
+        $('.index_5_return').on('click', function () {
+            $('.index_5').fadeOut(700)
+            $('.index_5 video')[0].pause();
+            $('index').fadeIn(700)
+            $('.mySwiper').fadeIn(700)
+            $('.index1').fadeIn(700)
+            $('.index2').fadeIn(700)
+            $('.index3').fadeIn(700)
+            $('.index4').fadeIn(700)
+            $('.index5').fadeIn(700)
+            $('.index6').fadeIn(700)
+            $('.index7').fadeIn(700)
+        })
+        //6  社区南事
+        $('.index6').on('click', function () {
+            $('.index_6').fadeIn(700)
+            $('index').fadeOut(700)
+            $('.mySwiper').fadeOut(700)
+            $('.index1').fadeOut(700)
+            $('.index2').fadeOut(700)
+            $('.index3').fadeOut(700)
+            $('.index4').fadeOut(700)
+            $('.index5').fadeOut(700)
+            $('.index6').fadeOut(700)
+            $('.index7').fadeOut(700)
+        })
+        $('.index_6_return').on('click', function () {
+            $('.index_6').fadeOut(700)
+            $('index').fadeIn(700)
+            $('.mySwiper').fadeIn(700)
+            $('.index1').fadeIn(700)
+            $('.index2').fadeIn(700)
+            $('.index3').fadeIn(700)
+            $('.index4').fadeIn(700)
+            $('.index5').fadeIn(700)
+            $('.index6').fadeIn(700)
+            $('.index7').fadeIn(700)
+        })
+        //7  我市通报
+        $('.index7').on('click', function () {
+            $('.index_7').fadeIn(700)
+            $('index').fadeOut(700)
+            $('.mySwiper').fadeOut(700)
+            $('.index1').fadeOut(700)
+            $('.index2').fadeOut(700)
+            $('.index3').fadeOut(700)
+            $('.index4').fadeOut(700)
+            $('.index5').fadeOut(700)
+            $('.index6').fadeOut(700)
+            $('.index7').fadeOut(700)
+        })
+        $('.index_7_return').on('click', function () {
+            $('.index_7').fadeOut(700)
+            $('index').fadeIn(700)
+            $('.mySwiper').fadeIn(700)
+            $('.index1').fadeIn(700)
+            $('.index2').fadeIn(700)
+            $('.index3').fadeIn(700)
+            $('.index4').fadeIn(700)
+            $('.index5').fadeIn(700)
+            $('.index6').fadeIn(700)
+            $('.index7').fadeIn(700)
+        })
+    })
+</script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        autoplay:{
+            disableOnInteraction: false,
+        },
+        loop:true,
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        },
+    });
+</script>
+<script>
+    var swiper1 = new Swiper(".mySwiper1", {
+        autoplay:{
+            disableOnInteraction: false,
+        },
+        loop:true,
+        pagination: {
+            el: ".swiper-pagination1",
+            dynamicBullets: true,
+        },
+    });
+</script>
+
+</html>
